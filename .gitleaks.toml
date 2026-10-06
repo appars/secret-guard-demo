@@ -1,0 +1,9 @@
+# .gitleaks.toml — custom secret-scanning rules
+[extend]
+useDefault = true                      # keep all built-in rules
+
+[[rules]]
+id = "groq-api-key"                    # name shown when a leak is found
+description = "Groq API Key"
+regex = '''gsk_[a-zA-Z0-9]{52}'''      # Groq keys: "gsk_" + 52 characters
+keywords = ["gsk_"]

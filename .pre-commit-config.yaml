@@ -1,0 +1,10 @@
+# ==============================================================
+#  .pre-commit-config.yaml
+#  PURPOSE : Scan code for secrets BEFORE every commit.
+#  RULE    : If a secret is found, the commit is BLOCKED.
+# ==============================================================
+repos:
+  - repo: https://github.com/gitleaks/gitleaks   # where the tool lives
+    rev: v8.21.2       # pinned version (same result for everyone)
+    hooks:
+      - id: gitleaks   # scans staged files for passwords, API keys, tokens
