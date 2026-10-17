@@ -87,7 +87,9 @@ def ask_groq(key, model, question):
     if status != 200:
         return f"❌ Error {status}: {data}"
     return data["choices"][0]["message"]["content"]
+import os
 
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 if __name__ == "__main__":
     key, model = validate_key()
