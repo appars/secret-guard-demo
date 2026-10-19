@@ -50,9 +50,8 @@ def validate_key():
     # Step 1: the key must come from the environment, not the code
     key = os.environ.get("GROQ_API_KEY")
     if not key:
-        sys.exit("❌ Step 1: GROQ_API_KEY not set.\n   Run: export GROQ_API_KEY='gsk_...'")
+        sys.exit("❌ Step 1: GROQ_API_KEY not set.\n   In PowerShell run: $env:GROQ_API_KEY = '<your key>'")
     print("🔐 Step 1: Is the key set?               ✅")
-
     # Step 2: check the format before sending it anywhere
     if not key.startswith("gsk_"):
         sys.exit("❌ Step 2: This does not look like a Groq key (must start with gsk_).")
